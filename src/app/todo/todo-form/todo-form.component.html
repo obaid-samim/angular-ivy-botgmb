@@ -1,0 +1,39 @@
+<form
+  [formGroup]="todoForm"
+  (ngSubmit)="formState === 'add' ? onAddTodo() : onEditTodo()"
+>
+  <div class="form-group">
+    <label for="title"><span class="required">*</span>Title:</label>
+    <input
+      type="text"
+      id="title"
+      class="form-control"
+      formControlName="title"
+    />
+  </div>
+  <div class="form-group">
+    <label for="summary">Summary:</label>
+    <textarea
+      id="summary"
+      class="form-control"
+      rows="3"
+      formControlName="summary"
+    ></textarea>
+  </div>
+  <button
+    class="btn btn-success"
+    type="submit"
+    *ngIf="formState === 'add'; else editControls"
+    [disabled]="todoForm.invalid"
+  >
+    Add
+  </button>
+  <ng-template #editControls>
+    <button class="btn btn-success" type="submit" [disabled]="todoForm.invalid">
+      Save
+    </button>
+    <button class="btn btn-warning ml-1" type="button" (click)="onFormReset()">
+      Clear
+    </button>
+  </ng-template>
+</form>

@@ -1,0 +1,22 @@
+<li
+  class="card my-1"
+  [ngClass]="{
+    'border-primary': todo.isSelected,
+    'bg-light': todo.isSelected
+  }"
+>
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ todo.title }}
+    </h5>
+    <p class="card-text">
+      {{ todo.summary }}
+    </p>
+    <div class="d-flex justify-content-end">
+      <div class="btn-group">
+        <div class="btn btn-sm btn-warning" (click)="onTodoSelect()">Edit</div>
+        <div class="btn btn-sm btn-danger" (click)="onDeleteTodo()">Delete</div>
+      </div>
+    </div>
+  </div>
+</li>

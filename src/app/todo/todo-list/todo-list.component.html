@@ -1,0 +1,6 @@
+<ul class="list-group mx-sm-5">
+  <app-todo-item
+    *ngFor="let todoItem of todoList | filterTodo: searchedText"
+    [todo]="todoItem"
+  ></app-todo-item>
+</ul>

@@ -1,0 +1,13 @@
+<form class="form-inline" (submit)="onSearch($event)">
+  <div class="input-group input-group-sm">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search todo"
+      [formControl]="search"
+    />
+    <div class="input-group-append">
+      <button class="btn btn-info" type="submit">Search</button>
+    </div>
+  </div>
+</form>
